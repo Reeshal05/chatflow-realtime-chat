@@ -1,0 +1,317 @@
+/* components/Profile/DeleteProfileModal.css */
+.delete-profile-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.delete-profile-modal {
+  background: white;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: slideIn 0.3s ease-out;
+}
+
+.delete-profile-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #fef2f2;
+  border-radius: 12px 12px 0 0;
+}
+
+.delete-profile-modal-header h2 {
+  color: #dc2626;
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.close-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.close-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.delete-profile-modal-content {
+  padding: 24px;
+}
+
+.warning-step, .confirmation-step {
+  text-align: center;
+}
+
+.warning-icon, .danger-icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.warning-step h3, .confirmation-step h3 {
+  color: #dc2626;
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.warning-step p, .confirmation-step p {
+  color: #374151;
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.deletion-list {
+  text-align: left;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px 0;
+  color: #7f1d1d;
+}
+
+.deletion-list li {
+  margin: 8px 0;
+  padding-left: 8px;
+}
+
+.warning-text {
+  font-weight: 500;
+  color: #dc2626 !important;
+}
+
+.confirmation-text {
+  background: #f3f4f6;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+  color: #dc2626;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.confirmation-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin: 16px 0;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.confirmation-input:focus {
+  outline: none;
+  border-color: #dc2626;
+}
+
+.confirmation-input:disabled {
+  background: #f9fafb;
+  cursor: not-allowed;
+}
+
+.final-warning {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-top: 16px;
+}
+
+.final-warning strong {
+  color: #dc2626;
+}
+
+.error-message {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 6px;
+  margin: 16px 0;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.delete-profile-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: flex-end;
+}
+
+.cancel-btn, .back-btn, .continue-btn, .delete-btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 120px;
+}
+
+.cancel-btn, .back-btn {
+  background: #f9fafb;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.cancel-btn:hover:not(:disabled), .back-btn:hover:not(:disabled) {
+  background: #f3f4f6;
+  border-color: #9ca3af;
+}
+
+.continue-btn {
+  background: #f59e0b;
+  color: white;
+}
+
+.continue-btn:hover:not(:disabled) {
+  background: #d97706;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.delete-btn:hover:not(:disabled) {
+  background: #b91c1c;
+}
+
+.delete-btn:disabled {
+  background: #f9fafb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.cancel-btn:disabled, .back-btn:disabled, .continue-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dark theme support */
+[data-theme="dark"] .delete-profile-modal {
+  background: #1f2937;
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .delete-profile-modal-header {
+  background: #3f1f1f;
+  border-color: #374151;
+}
+
+[data-theme="dark"] .deletion-list {
+  background: #3f1f1f;
+  border-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .confirmation-text {
+  background: #374151;
+  color: #fca5a5;
+}
+
+[data-theme="dark"] .confirmation-input {
+  background: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+[data-theme="dark"] .confirmation-input:focus {
+  border-color: #dc2626;
+}
+
+[data-theme="dark"] .error-message {
+  background: #3f1f1f;
+  border-color: #7f1d1d;
+}
+
+[data-theme="dark"] .cancel-btn, [data-theme="dark"] .back-btn {
+  background: #374151;
+  color: #f9fafb;
+  border-color: #4b5563;
+}
+
+[data-theme="dark"] .cancel-btn:hover:not(:disabled), 
+[data-theme="dark"] .back-btn:hover:not(:disabled) {
+  background: #4b5563;
+  border-color: #6b7280;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 640px) {
+  .delete-profile-modal {
+    width: 95%;
+    margin: 20px;
+  }
+  
+  .delete-profile-modal-content {
+    padding: 20px;
+  }
+  
+  .delete-profile-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn, .back-btn, .continue-btn, .delete-btn {
+    width: 100%;
+    margin: 4px 0;
+  }
+}

@@ -1,0 +1,85 @@
+
+/* Light Theme Variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #e9ecef;
+  --text-primary: #333333;
+  --text-secondary: #666666;
+  --text-muted: #999999;
+  --border-color: #e0e0e0;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+  --primary-color: #007bff;
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --warning-color: #ffc107;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  --bg-primary: #2c3e50;
+  --bg-secondary: #34495e;
+  --bg-tertiary: #3a546b;
+  --text-primary: #ffffff;
+  --text-secondary: #ecf0f1;
+  --text-muted: #bdc3c7;
+  --border-color: #34495e;
+  --shadow: 0 2px 4px rgba(0,0,0,0.3);
+  --primary-color: #3498db;
+  --success-color: #27ae60;
+  --danger-color: #e74c3c;
+  --warning-color: #f39c12;
+}
+
+/* Global body styles */
+body {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Common component styles using CSS variables */
+.card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+.button-primary {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.button-success {
+  background: var(--success-color);
+  color: white;
+  border: none;
+}
+
+.button-danger {
+  background: var(--danger-color);
+  color: white;
+  border: none;
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.border {
+  border-color: var(--border-color);
+}
+
+/* Smooth transitions for theme changes */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
